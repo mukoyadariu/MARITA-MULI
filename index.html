@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Euniah Marita Muli – Professional Resume</title>
+  <!-- Google Fonts for professional, clean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef2f5;   /* soft neutral background */
+      font-family: 'Inter', sans-serif;
+      color: #1a2c3e;
+      line-height: 1.45;
+      padding: 40px 24px;
+    }
+
+    /* main resume card */
+    .resume-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* two column grid */
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 34% 66%;
+    }
+
+    /* ========== LEFT COLUMN (DARK ACCENT) ========== */
+    .sidebar {
+      background: #1e3a4d;   /* deep professional teal-navy */
+      color: #f0f4f8;
+      padding: 2rem 1.5rem;
+      height: 100%;
+    }
+
+    .name-side {
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 1.2rem;
+    }
+
+    .name-side h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: white;
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+    }
+
+    .name-side .tagline {
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+
+    .contact-info {
+      margin: 1.5rem 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      word-break: break-word;
+      color: #e6edf2;
+    }
+
+    .contact-item i {
+      width: 20px;
+      font-size: 1rem;
+      text-align: center;
+      color: #9bc2d4;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 1.8rem 0 1rem 0;
+      border-left: 3px solid #7ab3c8;
+      padding-left: 12px;
+      color: #fff;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .skill-badge {
+      background: rgba(255,255,255,0.12);
+      border-radius: 40px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #f0f7fc;
+    }
+
+    .cert-item, .interest-item {
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .cert-item i, .interest-item i {
+      width: 20px;
+      font-size: 0.8rem;
+      color: #9bc2d4;
+    }
+
+    .ref-item {
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .ref-name {
+      font-weight: 600;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .ref-detail {
+      font-size: 0.7rem;
+      opacity: 0.8;
+      word-break: break-word;
+    }
+
+    hr.divider-light {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ========== RIGHT COLUMN (MAIN CONTENT) ========== */
+    .main-content {
+      background: white;
+      padding: 2rem 2rem 2rem 1.8rem;
+    }
+
+    .professional-summary {
+      background: #f8fafc;
+      padding: 1.2rem 1.2rem;
+      border-radius: 18px;
+      margin-bottom: 2rem;
+      border-left: 4px solid #1e3a4d;
+    }
+
+    .professional-summary p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #1f3b4a;
+    }
+
+    .right-section {
+      margin-bottom: 1.6rem;
+    }
+
+    .right-title {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1e3a4d;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .right-title i {
+      color: #2c6a8c;
+      font-size: 1rem;
+    }
+
+    .job-entry, .edu-entry {
+      margin-bottom: 1.3rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f2c3b;
+    }
+
+    .company {
+      font-weight: 600;
+      color: #2c6a8c;
+      font-size: 0.85rem;
+    }
+
+    .date {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #6f8ea0;
+    }
+
+    .job-desc {
+      padding-left: 0.8rem;
+      margin-top: 6px;
+    }
+
+    .job-desc li {
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      line-height: 1.4;
+      color: #2d3e4e;
+    }
+
+    .edu-detail {
+      margin-bottom: 1rem;
+    }
+
+    .edu-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #1e3a4d;
+    }
+
+    .edu-meta {
+      font-size: 0.75rem;
+      color: #5f7f92;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #2c6a8c;
+      font-weight: bold;
+      position: absolute;
+      left: 4px;
+    }
+
+    @media (max-width: 780px) {
+      .resume-grid {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding: 20px 16px;
+      }
+      .sidebar {
+        padding: 1.8rem;
+      }
+      .main-content {
+        padding: 1.8rem;
+      }
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .sidebar {
+        background: #1e3a4d;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .professional-summary {
+        background: #f8fafc;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .skill-badge {
+        background: rgba(0,0,0,0.08);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+    .spacer-sm {
+      margin-top: 0.25rem;
+    }
+    .interests-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .interest-badge {
+      background: rgba(255,255,255,0.1);
+      border-radius: 30px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+<div class="resume-container">
+  <div class="resume-grid">
+    <!-- LEFT COLUMN: Contact, Skills, Certifications, Interests, References -->
+    <aside class="sidebar">
+      <div class="name-side">
+        <h1>EUNIAH MARITA MULI</h1>
+        <div class="tagline">LL.B Candidate | Legal Researcher | Aspiring Advocate</div>
+      </div>
+      
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Machakos, Kenya</span></div>
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>0724 432 939 / 0732 743 378</span></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> <span>mariemuli05@gmail.com</span></div>
+      </div>
+
+      <!-- KEY SKILLS section -->
+      <div class="section-title">Core Competencies</div>
+      <div class="skills-list">
+        <span class="skill-badge">Legal Research & Writing</span>
+        <span class="skill-badge">Legal Drafting</span>
+        <span class="skill-badge">Case Analysis</span>
+        <span class="skill-badge">Court Procedures</span>
+        <span class="skill-badge">Statutory Research</span>
+        <span class="skill-badge">Pleadings & Contracts</span>
+        <span class="skill-badge">Computer Proficiency</span>
+        <span class="skill-badge">Problem Solving</span>
+        <span class="skill-badge">Time Management</span>
+        <span class="skill-badge">Multitasking</span>
+        <span class="skill-badge">Teamwork & Collaboration</span>
+        <span class="skill-badge">Communication</span>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section-title">Certifications</div>
+      <div class="cert-item"><i class="fas fa-certificate"></i> Certificate in Computer Packages</div>
+      <div class="cert-item"><i class="fas fa-gavel"></i> Certificate in Moot Court Cross Examination</div>
+      <div class="cert-item"><i class="fas fa-fire-extinguisher"></i> Certificate in Fire Safety</div>
+      
+      <!-- INTERESTS -->
+      <div class="section-title">Professional Interests</div>
+      <div class="interests-wrap">
+        <span class="interest-badge">Reading</span>
+        <span class="interest-badge">Human Rights</span>
+        <span class="interest-badge">Governance & Public Policy</span>
+        <span class="interest-badge">International Development</span>
+        <span class="interest-badge">Institutional Reform</span>
+      </div>
+
+      <!-- REFERENCES -->
+      <div class="section-title">References</div>
+      <div class="ref-item">
+        <div class="ref-name">Hon. Langat Betty Koech</div>
+        <div class="ref-detail">Magistrate, Machakos Law Courts</div>
+        <div class="ref-detail"><i class="fas fa-phone-alt" style="width: auto; margin-right: 6px;"></i> +254 726 677 364</div>
+        <div class="ref-detail"><i class="fas fa-envelope"></i> bettymemei@yahoo.com</div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-name">Ms. E. Aroka</div>
+        <div class="ref-detail">Principal, Aroka & Co. Advocates</div>
+        <div class="ref-detail"><i class="fas fa-phone-alt"></i> +254 722 837 531</div>
+        <div class="ref-detail"><i class="fas fa-envelope"></i> e.aroka@arokaandcoadvocates.com</div>
+      </div>
+      <hr class="divider-light">
+      <div class="ref-item" style="margin-top: 10px; font-size: 0.7rem; opacity: 0.7;">
+        <i class="fas fa-check-circle"></i> Available upon additional request
+      </div>
+    </aside>
+
+    <!-- RIGHT COLUMN: Professional Summary, Experience, Education -->
+    <main class="main-content">
+      <!-- summary block -->
+      <div class="professional-summary">
+        <p><strong>Detail-oriented LL.B candidate</strong> with practical exposure in legal research, drafting, case analysis, and court procedures. Proven ability to prepare legal documents, conduct statutory & case law research, and support litigation processes. Combines strong communication, problem-solving, and organizational skills with unwavering professionalism and ethical legal practice.</p>
+      </div>
+
+      <!-- PROFESSIONAL EXPERIENCE -->
+      <div class="right-section">
+        <div class="right-title"><i class="fas fa-briefcase"></i> Professional Experience</div>
+        
+        <div class="job-entry">
+          <div class="job-header">
+            <span class="job-title">Judicial Attachee</span>
+            <span class="date">Jan 2026 – Mar 2026</span>
+          </div>
+          <div class="company">Machakos Law Courts, Machakos</div>
+          <ul class="job-desc">
+            <li>Observed and analyzed civil and criminal court proceedings, gaining insight into judicial processes.</li>
+            <li>Conducted legal research and prepared detailed case summaries for presiding magistrates.</li>
+            <li>Drafted legal briefs, judgments, and court notes under close judicial supervision.</li>
+            <li>Exposed to court administration, registry operations, and digital case management systems.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <span class="job-title">Legal Intern</span>
+            <span class="date">Mar 2025 – May 2025</span>
+          </div>
+          <div class="company">Aroka & Company Advocates, Mombasa</div>
+          <ul class="job-desc">
+            <li>Performed statutory and case law research to support ongoing litigation matters and client advisory.</li>
+            <li>Assisted in drafting pleadings, affidavits, contracts, and legal correspondence with accuracy.</li>
+            <li>Attended court sessions and client meetings, documenting instructions and case developments.</li>
+            <li>Supported case preparation, documentation, and file organization, ensuring efficient workflow.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="right-section">
+        <div class="right-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        
+        <div class="edu-detail">
+          <div class="edu-title">Bachelor of Laws (LL.B)</div>
+          <div class="edu-meta">Catholic University of Eastern Africa (Lang'ata) | May 2023 – October 2027 (Expected)</div>
+          <ul class="job-desc" style="margin-top: 6px;">
+            <li>Core coursework: Constitutional Law, Legal Research & Writing, Criminal Procedure, Civil Litigation.</li>
+            <li>Active in moot court competitions and legal aid clinics.</li>
+          </ul>
+        </div>
+
+        <div class="edu-detail">
+          <div class="edu-title">Kenya Certificate of Secondary Education (KCSE)</div>
+          <div class="edu-meta">Loreto Kiambu Girls High School | Grade C+ (2022)</div>
+        </div>
+
+        <div class="edu-detail">
+          <div class="edu-title">Kenya Certificate of Primary Education (KCPE)</div>
+          <div class="edu-meta">Early Bird Primary School | 374 Marks (2018)</div>
+        </div>
+      </div>
+
+      <!-- Additional Legal Strengths: subtle highlight with key drafting/research -->
+      <div class="right-section">
+        <div class="right-title"><i class="fas fa-balance-scale"></i> Legal Strengths</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px;">
+          <span style="background:#eef2f9; padding:6px 14px; border-radius:30px; font-size:0.75rem; font-weight:500;">Case Briefing</span>
+          <span style="background:#eef2f9; padding:6px 14px; border-radius:30px; font-size:0.75rem; font-weight:500;">Statutory Interpretation</span>
+          <span style="background:#eef2f9; padding:6px 14px; border-radius:30px; font-size:0.75rem; font-weight:500;">Pleadings Drafting</span>
+          <span style="background:#eef2f9; padding:6px 14px; border-radius:30px; font-size:0.75rem; font-weight:500;">Client Interviewing</span>
+          <span style="background:#eef2f9; padding:6px 14px; border-radius:30px; font-size:0.75rem; font-weight:500;">Legal Analysis</span>
+        </div>
+      </div>
+      
+      <!-- subtle footer or misc -->
+      <div style="margin-top: 24px; border-top: 1px solid #e9edf2; padding-top: 12px; font-size: 0.7rem; color:#6b8da0; text-align: left">
+        <i class="fas fa-flag-checkered"></i> Open to legal research, paralegal, and internship opportunities | Fully licensed for attachment & internship
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
